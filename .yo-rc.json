@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.event.service"
+    },
+    "jhipsterVersion": "5.7.0",
+    "applicationType": "microservice",
+    "baseName": "EventService",
+    "packageName": "com.event.service",
+    "packageFolder": "com/event/service",
+    "serverPort": "9095",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MmU2N2M2ZTk0MjUwYzMyMjEzYzMwYzIxMzJjNDVjMzlkNjhjZWMwYWQyNjFjNTljYmZkOWQ2MDEyMzE4YjBmMDQyYTJhOGJiOWU2OGNkYzYyZDM2NzI2NjlmMmM2ZDYxZTk1ZDAwMGQ0ZTAwOGE2MjY1MzU1NzA5ZThjNzViNjU=",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
