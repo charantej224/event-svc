@@ -1,0 +1,9 @@
+/**
+ * The Event entity.
+ */
+entity EventRecords {
+	emailId String,
+    eventName String,
+    createdDate LocalDate,
+    modifiedDate LocalDate
+}

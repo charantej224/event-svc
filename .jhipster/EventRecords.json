@@ -1,0 +1,33 @@
+{
+    "name": "EventRecords",
+    "fields": [
+        {
+            "fieldName": "emailId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eventName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "modifiedDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190326085904",
+    "javadoc": "The Event entity.",
+    "entityTableName": "event_records",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "EventService",
+    "applications": "*",
+    "microserviceName": "EventService"
+}
