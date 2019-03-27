@@ -4,6 +4,6 @@
 entity EventRecords {
 	emailId String,
     eventName String,
-    createdDate LocalDate,
-    modifiedDate LocalDate
+    createdDate Instant,
+    modifiedDate Instant
 }

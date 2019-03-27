@@ -1,11 +1,13 @@
 package com.event.service.domain;
 
 import io.swagger.annotations.ApiModel;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.Instant;
 import java.util.Objects;
 
 /**
@@ -28,11 +30,13 @@ public class EventRecords implements Serializable {
     @Column(name = "event_name")
     private String eventName;
 
+    @CreationTimestamp
     @Column(name = "created_date")
-    private LocalDate createdDate;
+    private Instant createdDate;
 
+    @UpdateTimestamp
     @Column(name = "modified_date")
-    private LocalDate modifiedDate;
+    private Instant modifiedDate;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -69,29 +73,29 @@ public class EventRecords implements Serializable {
         this.eventName = eventName;
     }
 
-    public LocalDate getCreatedDate() {
+    public Instant getCreatedDate() {
         return createdDate;
     }
 
-    public EventRecords createdDate(LocalDate createdDate) {
+    public EventRecords createdDate(Instant createdDate) {
         this.createdDate = createdDate;
         return this;
     }
 
-    public void setCreatedDate(LocalDate createdDate) {
+    public void setCreatedDate(Instant createdDate) {
         this.createdDate = createdDate;
     }
 
-    public LocalDate getModifiedDate() {
+    public Instant getModifiedDate() {
         return modifiedDate;
     }
 
-    public EventRecords modifiedDate(LocalDate modifiedDate) {
+    public EventRecords modifiedDate(Instant modifiedDate) {
         this.modifiedDate = modifiedDate;
         return this;
     }
 
-    public void setModifiedDate(LocalDate modifiedDate) {
+    public void setModifiedDate(Instant modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove

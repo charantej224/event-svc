@@ -11,11 +11,11 @@
         },
         {
             "fieldName": "createdDate",
-            "fieldType": "LocalDate"
+            "fieldType": "Instant"
         },
         {
             "fieldName": "modifiedDate",
-            "fieldType": "LocalDate"
+            "fieldType": "Instant"
         }
     ],
     "relationships": [],
