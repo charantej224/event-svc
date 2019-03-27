@@ -77,7 +77,11 @@ spring:
             enabled: false
     thymeleaf:
         mode: HTML
-
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
 server:
     servlet:
         context-path: /${spring.application.name}
