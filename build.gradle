@@ -21,7 +21,7 @@ plugins {
     id "net.ltgt.apt-idea" version "0.19"
     id "net.ltgt.apt" version "0.19"
     id "io.spring.dependency-management" version "1.0.6.RELEASE"
-    id 'org.config.liquibase.gradle' version '2.0.1'
+    id 'org.liquibase.gradle' version '2.0.1'
     //jhipster-needle-gradle-plugins - JHipster will add additional gradle plugins here
 }
 
@@ -122,7 +122,7 @@ if (!project.hasProperty('runList')) {
     project.ext.runList = 'main'
 }
 
-project.ext.diffChangelogFile = 'src/main/resources/config/config.liquibase/changelog/' + new Date().format('yyyyMMddHHmmss') + '_changelog.xml'
+project.ext.diffChangelogFile = 'src/main/resources/config/liquibase/changelog/' + new Date().format('yyyyMMddHHmmss') + '_changelog.xml'
 
 liquibase {
     activities {
@@ -131,7 +131,7 @@ liquibase {
             url 'jdbc:mysql://localhost:3306/EventService'
             username 'root'
             password ''
-            changeLogFile 'src/main/resources/config/config.liquibase/master.xml'
+            changeLogFile 'src/main/resources/config/liquibase/master.xml'
             defaultSchemaName 'EventService'
             logLevel 'debug'
             classpath 'src/main/resources/'
@@ -194,10 +194,10 @@ dependencies {
     compile "org.hibernate:hibernate-entitymanager"
     compile "org.hibernate:hibernate-envers"
     compile "org.hibernate.validator:hibernate-validator"
-    compile "org.config.liquibase:config.liquibase-core"
-    compile "com.mattbertolini:config.liquibase-slf4j"
-    liquibaseRuntime "org.config.liquibase:config.liquibase-core"
-    liquibaseRuntime "org.config.liquibase.ext:config.liquibase-hibernate5:${liquibase_hibernate5_version}"
+    compile "org.liquibase:liquibase-core"
+    compile "com.mattbertolini:liquibase-slf4j"
+    liquibaseRuntime "org.liquibase:liquibase-core"
+    liquibaseRuntime "org.liquibase.ext:liquibase-hibernate5:${liquibase_hibernate5_version}"
     liquibaseRuntime sourceSets.main.compileClasspath
     compile "org.springframework.boot:spring-boot-loader-tools"
     compile "org.springframework.boot:spring-boot-starter-mail"
@@ -246,7 +246,7 @@ dependencies {
     testCompile "org.assertj:assertj-core"
     testCompile "junit:junit"
     testCompile "org.mockito:mockito-core"
-    testCompile "com.mattbertolini:config.liquibase-slf4j"
+    testCompile "com.mattbertolini:liquibase-slf4j"
     testCompile "org.hamcrest:hamcrest-library"
     testCompile "com.h2database:h2"
     //jhipster-needle-gradle-dependency - JHipster will add additional dependencies here
