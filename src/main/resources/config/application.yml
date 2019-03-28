@@ -55,7 +55,7 @@ management:
 
 spring:
     application:
-        name: EventService
+        name: event-service
     profiles:
         # The commented value for `active` can be replaced with valid Spring profiles to load.
         # Otherwise, it will be filled in by gradle when building the WAR file
@@ -137,3 +137,6 @@ jhipster:
 # ===================================================================
 
 # application:
+application:
+    messages:
+        101: Email id doesn't exist in events database

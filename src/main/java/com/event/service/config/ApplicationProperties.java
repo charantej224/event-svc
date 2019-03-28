@@ -2,6 +2,9 @@ package com.event.service.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Properties specific to Event Service.
  * <p>
@@ -11,4 +14,13 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "application", ignoreUnknownFields = false)
 public class ApplicationProperties {
 
+    private Map<String, String> messages = new HashMap<>();
+
+    public Map<String, String> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(Map<String, String> messages) {
+        this.messages = messages;
+    }
 }

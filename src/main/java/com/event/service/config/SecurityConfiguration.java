@@ -1,9 +1,5 @@
 package com.event.service.config;
 
-import com.event.service.security.*;
-import com.event.service.security.jwt.*;
-
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpMethod;
@@ -21,15 +17,6 @@ import org.zalando.problem.spring.web.advice.security.SecurityProblemSupport;
 @Import(SecurityProblemSupport.class)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    private final TokenProvider tokenProvider;
-
-    private final SecurityProblemSupport problemSupport;
-
-    public SecurityConfiguration(TokenProvider tokenProvider, SecurityProblemSupport problemSupport) {
-        this.tokenProvider = tokenProvider;
-        this.problemSupport = problemSupport;
-    }
-
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
@@ -44,27 +31,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .csrf()
             .disable()
             .exceptionHandling()
-            .authenticationEntryPoint(problemSupport)
-            .accessDeniedHandler(problemSupport)
-        .and()
+            .and()
             .headers()
             .frameOptions()
             .disable()
-        .and()
+            .and()
             .sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-        .and()
+            .and()
             .authorizeRequests()
-            .antMatchers("/api/**").authenticated()
+            .antMatchers("/api/**").permitAll()
             .antMatchers("/management/health").permitAll()
-            .antMatchers("/management/info").permitAll()
-            .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
-        .and()
-            .apply(securityConfigurerAdapter());
+            .antMatchers("/management/info").permitAll();
 
     }
 
-    private JWTConfigurer securityConfigurerAdapter() {
-        return new JWTConfigurer(tokenProvider);
-    }
 }
