@@ -167,6 +167,7 @@ repositories {
 dependencies {
     // Use ", version: jhipster_dependencies_version, changing: true" if you want
     // to use a SNAPSHOT release instead of a stable release
+    compile group: 'org.json', name: 'json', version: '20090211'
     compile group: 'org.jacoco', name: 'jacoco-maven-plugin', version: '0.8.0'
     compile group: "io.github.jhipster", name: "jhipster-framework"
     compile "io.dropwizard.metrics:metrics-core"

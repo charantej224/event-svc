@@ -102,3 +102,10 @@ jhipster:
 # ===================================================================
 
 # application:
+
+queue:
+    event-queue: event-queue
+
+local:
+    server:
+        port: 51010
