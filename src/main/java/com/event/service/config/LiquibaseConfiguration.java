@@ -31,10 +31,10 @@ public class LiquibaseConfiguration {
     public SpringLiquibase liquibase(@Qualifier("taskExecutor") TaskExecutor taskExecutor,
             DataSource dataSource, LiquibaseProperties liquibaseProperties) {
 
-        // Use liquibase.integration.spring.SpringLiquibase if you don't want Liquibase to start asynchronously
+        // Use config.liquibase.integration.spring.SpringLiquibase if you don't want Liquibase to start asynchronously
         SpringLiquibase liquibase = new AsyncSpringLiquibase(taskExecutor, env);
         liquibase.setDataSource(dataSource);
-        liquibase.setChangeLog("classpath:config/liquibase/master.xml");
+        liquibase.setChangeLog("classpath:config/config.liquibase/master.xml");
         liquibase.setContexts(liquibaseProperties.getContexts());
         liquibase.setDefaultSchema(liquibaseProperties.getDefaultSchema());
         liquibase.setDropFirst(liquibaseProperties.isDropFirst());
