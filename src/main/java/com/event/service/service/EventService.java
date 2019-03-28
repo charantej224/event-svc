@@ -21,13 +21,13 @@ import static com.event.service.config.Constants.NUMBER_101;
 public class EventService {
 
     @Autowired
-    CustomEventRepository eventRepository;
+    private CustomEventRepository eventRepository;
 
     @Autowired
-    HttpHeaders httpHeaders;
+    private HttpHeaders httpHeaders;
 
     @Autowired
-    ApplicationProperties applicationProperties;
+    private ApplicationProperties applicationProperties;
 
     private static Logger logger = LoggerFactory.getLogger(EventService.class);
 

@@ -16,7 +16,7 @@ public class EventMessageListener {
     private String eventQueue;
 
     @Autowired
-    EventRecordsRepository eventRecordsRepository;
+    private EventRecordsRepository eventRecordsRepository;
 
     private static Logger logger = LoggerFactory.getLogger(EventMessageListener.class);
 

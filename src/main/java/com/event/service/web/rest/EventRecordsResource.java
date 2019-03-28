@@ -19,10 +19,10 @@ public class EventRecordsResource {
     private final Logger logger = LoggerFactory.getLogger(EventRecordsResource.class);
 
     @Autowired
-    EventService eventService;
+    private EventService eventService;
 
     /**
-     * GET  /event-records/:id : get the "id" eventRecords.
+     * GET  /event-records?emailId=value get the "id" eventRecords.
      *
      * @param emailId the id of the eventRecords to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the eventRecords, or with status 404 (Not Found)
