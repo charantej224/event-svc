@@ -3,6 +3,7 @@ package com.event.service.config;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.QueueBuilder;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
@@ -11,7 +12,8 @@ import org.springframework.http.MediaType;
 @Configuration
 public class ApplicationConfiguration {
 
-    public static final String EVENT_QUEUE = "event-queue";
+    @Value("${queue.event-queue}")
+    private String eventQueue;
 
     @Bean
     public Jackson2JsonMessageConverter producerJackson2MessageConverter() {
@@ -20,7 +22,7 @@ public class ApplicationConfiguration {
 
     @Bean
     public Queue getEventQueue(){
-        return QueueBuilder.durable(EVENT_QUEUE).build();
+        return QueueBuilder.durable(eventQueue).build();
     }
 
     @Bean

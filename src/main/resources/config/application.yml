@@ -140,3 +140,6 @@ jhipster:
 application:
     messages:
         101: Email id doesn't exist in events database
+
+queue:
+    event-queue: event-queue
